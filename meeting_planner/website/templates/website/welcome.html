@@ -6,7 +6,19 @@
 </head>
 <body>
     <h1>Welcome to the Meeting planner</h1>
-    <!-- variying message that is passed on views.py !-->
-    <p>{{message}}</p>
+    <!-- dynamic message that is passed on views.py !-->
+
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="{% url 'detail' meeting.id %}">
+                    {{meeting.title}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
 </body>
 </html>
