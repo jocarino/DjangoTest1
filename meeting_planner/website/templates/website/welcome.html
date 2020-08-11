@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome!</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title%}Welcome{% endblock %}
+
+{% block content %}
     <h1>Welcome to the Meeting planner</h1>
     <!-- dynamic message that is passed on views.py !-->
 
@@ -19,6 +17,6 @@
         {% endfor %}
     </ul>
 
+<p>To see all rooms click <a href="{% url 'rooms' %}">here</a>. </p>
 
-</body>
-</html>
+{% endblock %}
