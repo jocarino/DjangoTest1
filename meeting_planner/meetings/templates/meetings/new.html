@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title%}New Meeting{% endblock %}
+
+{% block content %}
+<h1>Plan a new meeting</h1>
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}<!---token to tell it's not an attack--->
+    <button type="submit">Create</button>
+</form>
+
+{% endblock %}
+
